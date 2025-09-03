@@ -10,8 +10,8 @@
 
 ## Preview
 
-![Preview](view.png)
-![Preview](view2.png)
+![Preview](assets/view.png)
+![Preview](assets/view2.png)
 
 ## Description
 
