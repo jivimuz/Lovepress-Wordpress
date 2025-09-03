@@ -1,0 +1,66 @@
+/*
+  LovePress Animation Classes
+  - Add .lp-animate to element you want to animate.
+  - Add data-animation="lp-ani-fade" (or slide, zoom, flip) to parent section.
+  - JS will add .in-view to .lp-animate when it's visible.
+*/
+
+.lp-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade Animation */
+[data-animation="lp-ani-fade"] .lp-animate,
+.lp-animate.lp-ani-fade {
+  transform: translateY(30px);
+}
+[data-animation="lp-ani-fade"] .lp-animate.in-view,
+.lp-animate.lp-ani-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide Animation */
+[data-animation="lp-ani-slide"] .lp-animate,
+.lp-animate.lp-ani-slide {
+  transform: translateX(-50px);
+}
+[data-animation="lp-ani-slide"] .lp-animate.in-view,
+.lp-animate.lp-ani-slide.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom Animation */
+[data-animation="lp-ani-zoom"] .lp-animate,
+.lp-animate.lp-ani-zoom {
+  transform: scale(0.8);
+}
+[data-animation="lp-ani-zoom"] .lp-animate.in-view,
+.lp-animate.lp-ani-zoom.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Flip Animation */
+[data-animation="lp-ani-flip"] .lp-animate,
+.lp-animate.lp-ani-flip {
+  transform: perspective(1000px) rotateX(-90deg);
+}
+[data-animation="lp-ani-flip"] .lp-animate.in-view,
+.lp-animate.lp-ani-flip.in-view {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0);
+}
+
+/* Staggered animation */
+.lp-animate.in-view:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.lp-animate.in-view:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.lp-animate.in-view:nth-child(4) {
+  transition-delay: 0.3s;
+}
